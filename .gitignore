@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # custom
+_project_docs
 _theme_files
-documentation
