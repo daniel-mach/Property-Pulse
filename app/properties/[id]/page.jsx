@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 const PropertyPage = () => {
-	return <div>PropertyPage</div>;
+  return <>PropertyPage</>;
 };
 
 export default PropertyPage;
