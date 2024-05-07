@@ -1,16 +1,18 @@
 import '@/assets/styles/globals.css';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
-	title: 'Property Rental',
-	description: 'Find the perfect rental property',
-	keywords: 'find, rental, property, properties',
+	title: 'GM Hangout',
+	description: 'Gather your RPG party!',
+	keywords: 'GM, DM, DND, RPG',
 };
 
 const MainLayout = ({ children }) => {
 	return (
 		<html>
 			<body>
-				<div>{children}</div>
+				<Navbar />
+				<main>{children}</main>
 			</body>
 		</html>
 	);
