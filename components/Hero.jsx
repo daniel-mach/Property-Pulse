@@ -19,7 +19,7 @@ const Hero = () => {
               <input
                 type="text"
                 id="location"
-                placeholder="Enter Location (City, State, Zip, etc"
+                placeholder="Enter Location (City, State, Zip etc.)"
                 className="w-full rounded-lg bg-white px-4 py-3 text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               />
             </div>
