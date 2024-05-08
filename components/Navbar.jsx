@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-            {/* Mobile menu butto */}
+            {/* Mobile menu button */}
 
             <button
               type="button"
@@ -76,7 +76,6 @@ const Navbar = () => {
                     pathname === "/properties" ? "bg-black" : ""
                   } rounded-md px-3 py-2 text-white hover:bg-gray-900 hover:text-white`}
                 >
-                  {" "}
                   Properties
                 </Link>
                 {isLoggedIn && (
@@ -86,7 +85,6 @@ const Navbar = () => {
                       pathname === "/properties/add" ? "bg-black" : ""
                     } rounded-md px-3 py-2 text-white hover:bg-gray-900 hover:text-white`}
                   >
-                    {" "}
                     Add Property
                   </Link>
                 )}
