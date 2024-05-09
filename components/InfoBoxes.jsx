@@ -2,7 +2,6 @@ import InfoBox from "./InfoBox";
 
 const InfoBoxes = () => {
   return (
-    <>
       <section>
         <div className="container-xl m-auto lg:container">
           <div className="grid grid-cols-1 gap-4 rounded-lg p-4 md:grid-cols-2">
@@ -33,7 +32,6 @@ const InfoBoxes = () => {
           </div>
         </div>
       </section>
-    </>
   );
 };
 export default InfoBoxes;
