@@ -5,7 +5,7 @@ const InfoBox = ({
   backgroundColor = "bg-gray-100",
   textColor = "text-gray-800",
   buttonInfo,
-  children,
+  children
 }) => {
   return (
     <div className={`${backgroundColor} rounded-lg  p-6 shadow-md`}>

@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "GM Hangout",
-  description: "Gather your RPG party!",
-  keywords: "GM, DM, DND, RPG",
+  title: "Property Pulse",
+  description: "Find the best properties",
+  keywords: "property, rental"
 };
 
 const MainLayout = ({ children }) => {

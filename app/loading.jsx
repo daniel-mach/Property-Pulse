@@ -5,7 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const LoadingPage = ({ loading }) => {
   const override = {
     display: "block",
-    margin: "100px auto",
+    margin: "100px auto"
   };
 
   return (
