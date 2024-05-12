@@ -21,7 +21,6 @@ const PropertyDetails = ({ property }) => {
             {property.location.state}
           </p>
         </div>
-
         <h3 className="my-6 bg-gray-800 p-2 text-lg font-bold text-white">
           Rates & Options
         </h3>
@@ -58,7 +57,6 @@ const PropertyDetails = ({ property }) => {
           </div>
         </div>
       </div>
-
       <div className="mt-6 rounded-lg bg-white p-6 shadow-md">
         <h3 className="mb-6 text-lg font-bold">Description & Details</h3>
         <div className="mb-4 flex justify-center gap-4 space-x-9 text-xl text-blue-500">
@@ -80,10 +78,8 @@ const PropertyDetails = ({ property }) => {
         </div>
         <p className="mb-4 text-center text-gray-500">{property.description}</p>
       </div>
-
       <div className="mt-6 rounded-lg bg-white p-6 shadow-md">
         <h3 className="mb-6 text-lg font-bold">Amenities</h3>
-
         <ul className="grid list-none grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {property.amenities.map((amenity, index) => (
             <li className="mt-2 flex items-center" key={index}>
