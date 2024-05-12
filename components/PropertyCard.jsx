@@ -42,7 +42,6 @@ const PropertyCard = ({ property }) => {
         <h3 className="absolute right-[10px] top-[10px] rounded-lg bg-white px-4 py-2 text-right font-bold text-blue-500 md:text-center lg:text-right">
           ${getRateDisplay()}
         </h3>
-
         <div className="mb-4 flex justify-center gap-4 text-gray-500">
           <p>
             <FaBed className="mr-2 inline"></FaBed>
@@ -60,29 +59,24 @@ const PropertyCard = ({ property }) => {
             <span className="md:hidden lg:inline">sqft</span>
           </p>
         </div>
-
         <div className="mb-4 flex justify-center gap-4 text-sm text-green-700">
           {property.rates.nightly && (
             <p>
               <FaMoneyBill className="mr-2 inline"></FaMoneyBill>Nightly
             </p>
           )}
-
           {property.rates.weekly && (
             <p>
               <FaMoneyBill className="mr-2 inline"></FaMoneyBill>Weekly
             </p>
           )}
-
           {property.rates.monthly && (
             <p>
               <FaMoneyBill className="mr-2 inline"></FaMoneyBill>Monthly
             </p>
           )}
         </div>
-
         <div className="mb-5 border border-gray-100"></div>
-
         <div className="mb-4 flex flex-col justify-between lg:flex-row">
           <div className="mb-4 flex gap-2 align-middle lg:mb-0">
             <FaMapMarker className="mt-1 text-orange-700"></FaMapMarker>

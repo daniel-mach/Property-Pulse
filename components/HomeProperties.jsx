@@ -30,7 +30,6 @@ const HomeProperties = async () => {
           </div>
         </div>
       </section>
-
       <section className="m-auto my-10 max-w-lg px-6">
         <Link
           href="/properties"

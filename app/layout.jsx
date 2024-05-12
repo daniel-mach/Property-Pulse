@@ -11,10 +11,10 @@ export const metadata = {
 const MainLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className="flex h-screen flex-col justify-between">
+        <Navbar className="h-10" />
+        <main className="h10 mb-auto">{children}</main>
+        <Footer className="h-10" />
       </body>
     </html>
   );

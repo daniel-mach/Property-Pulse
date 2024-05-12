@@ -12,7 +12,9 @@ export const GET = async (request, { params }) => {
       return new Response("Property not found", { status: 404 });
     }
 
-    return Response.json(properties);
+    return new Response(JSON.stringify(property), {
+      status: 200
+    });
   } catch (error) {
     console.log(error);
     return new Response("Something went wrong", { status: 500 });
