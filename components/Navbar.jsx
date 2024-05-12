@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,19 +15,23 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setIsMobileMenuOpen(false);
+    });
+  }, []);
+
   return (
     <nav className="border-b border-blue-500 bg-blue-700">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-            {/* Mobile menu button */}
-
             <button
               type="button"
               id="mobile-dropdown-button"
               className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
               <span className="absolute -inset-0.5"></span>
@@ -49,17 +53,12 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
-            {/* Logo */}
-
             <Link className="flex flex-shrink-0 items-center" href="/">
               <Image className="h-10 w-auto" src={logo} alt="Logo icon" />
               <span className="ml-2 hidden text-2xl font-bold text-white md:block">
                 PropertyPulse
               </span>
             </Link>
-
-            {/* Desktop Menu Hidden below md screens */}
-
             <div className="hidden md:ml-6 md:block">
               <div className="flex space-x-2">
                 <Link
@@ -91,9 +90,6 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-
-          {/* Right Side Menu (Logged Out) */}
-
           {!isLoggedIn && (
             <div className="hidden md:ml-6 md:block">
               <div className="flex items-center">
@@ -104,9 +100,6 @@ const Navbar = () => {
               </div>
             </div>
           )}
-
-          {/* Right Side Menu (Logged In) */}
-
           {isLoggedIn && (
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
               <Link href="/messages" className="group relative">
@@ -135,16 +128,13 @@ const Navbar = () => {
                   2{/* Replace with the actual number of notifications */}
                 </span>
               </Link>
-
-              {/* Profile dropdown button */}
-
               <div className="relative ml-3">
                 <div>
                   <button
                     type="button"
                     className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     id="user-menu-button"
-                    aria-expanded="false"
+                    aria-expanded={isMobileMenuOpen}
                     aria-haspopup="true"
                     onClick={() => setIsProfileMenuOpen((prev) => !prev)}
                   >
@@ -157,9 +147,6 @@ const Navbar = () => {
                     />
                   </button>
                 </div>
-
-                {/* Profile dropdown */}
-
                 {isProfileMenuOpen && (
                   <div
                     id="user-menu"
@@ -202,9 +189,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      {/* Mobile menu, show/hide based on menu state. */}
-
       {isMobileMenuOpen && (
         <div id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
@@ -224,8 +208,7 @@ const Navbar = () => {
             >
               Properties
             </Link>
-
-            {isLoggedIn && (
+            {isLoggedIn ? (
               <Link
                 href="/properties/add"
                 className={`${
@@ -234,9 +217,7 @@ const Navbar = () => {
               >
                 Add Property
               </Link>
-            )}
-
-            {!isLoggedIn && (
+            ) : (
               <button className="my-4 flex items-center rounded-md bg-gray-700 px-3 py-2 text-white hover:bg-gray-900 hover:text-white">
                 <FaGoogle className="mr-2 text-white" />
                 <span>Login or Register</span>
