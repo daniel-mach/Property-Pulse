@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Property Pulse",
-  description: "Find the best properties",
-  keywords: "property, rental"
+  title: "PropertyPulse | Find the Perfect Rental",
+  description: "Find your dream rental property",
+  keywords: "rental, property, find rentals, find properties"
 };
 
 const MainLayout = ({ children }) => {
