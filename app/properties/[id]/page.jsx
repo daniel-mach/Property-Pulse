@@ -62,9 +62,8 @@ const PropertyPage = () => {
           </section>
           <section className="bg-blue-50">
             <div className="container m-auto px-6 py-10">
-              <div className="md:grid-cols-70/30 grid w-full grid-cols-1 gap-6">
+              <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-70/30">
                 <PropertyDetails property={property} />
-
                 <aside className="space-y-4">
                   <button className="flex w-full items-center justify-center rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600">
                     <i className="fas fa-bookmark mr-2"></i> Bookmark Property
@@ -72,7 +71,6 @@ const PropertyPage = () => {
                   <button className="flex w-full items-center justify-center rounded-full bg-orange-500 px-4 py-2 font-bold text-white hover:bg-orange-600">
                     <i className="fas fa-share mr-2"></i> Share Property
                   </button>
-
                   <div className="rounded-lg bg-white p-6 shadow-md">
                     <h3 className="mb-6 text-xl font-bold">
                       Contact Property Manager
