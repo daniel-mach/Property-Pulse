@@ -143,7 +143,7 @@ const Navbar = () => {
                   </svg>
                 </button>
                 <span className="absolute right-0 top-0 inline-flex -translate-y-1/2 translate-x-1/2 transform items-center justify-center rounded-full bg-red-600 px-2 py-1 text-xs font-bold leading-none text-white">
-                  2{/* Replace with the actual number of notifications */}
+                  2
                 </span>
               </Link>
               <div className="relative ml-3">
@@ -195,6 +195,10 @@ const Navbar = () => {
                       Saved Properties
                     </Link>
                     <button
+                      onClick={() => {
+                        setIsProfileMenuOpen(false);
+                        signOut();
+                      }}
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
