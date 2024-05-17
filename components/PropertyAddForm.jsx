@@ -69,7 +69,17 @@ const PropertyAddForm = () => {
     setFields((prevFields) => ({ ...prevFields, amenities: updatedAmenities }));
   };
 
-  const handleImageChange = () => {};
+  const handleImageChange = (event) => {
+    const { files } = event.target;
+
+    const updatedImages = [...fields.images];
+
+    for (const file of files) {
+      updatedImages.push(file);
+    }
+
+    setFields((prevFields) => ({ ...prevFields, images: updatedImages }));
+  };
 
   return (
     <form>
