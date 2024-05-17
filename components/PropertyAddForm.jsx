@@ -30,7 +30,26 @@ const PropertyAddForm = () => {
     images: []
   });
 
-  const handleChange = () => {};
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name.includes(".")) {
+      const [outerKey, innerKey] = name.split(".");
+
+      setFields((prevFields) => ({
+        ...prevFields,
+        [outerKey]: {
+          ...prevFields[outerKey],
+          [innerKey]: value
+        }
+      }));
+    } else {
+      setFields((prevFields) => ({
+        ...prevFields,
+        [name]: value
+      }));
+    }
+  };
 
   const handleAmenitiesChange = () => {};
 
