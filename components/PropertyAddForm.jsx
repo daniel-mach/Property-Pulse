@@ -51,7 +51,23 @@ const PropertyAddForm = () => {
     }
   };
 
-  const handleAmenitiesChange = () => {};
+  const handleAmenitiesChange = (event) => {
+    const { value, checked } = event.target;
+
+    const updatedAmenities = [...fields.amenities];
+
+    if (checked) {
+      updatedAmenities.push(value);
+    } else {
+      const index = updatedAmenities.indexOf(value);
+
+      if (index !== -1) {
+        updatedAmenities.splice(index, 1);
+      }
+    }
+
+    setFields((prevFields) => ({ ...prevFields, amenities: updatedAmenities }));
+  };
 
   const handleImageChange = () => {};
 
