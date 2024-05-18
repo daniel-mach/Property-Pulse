@@ -52,8 +52,6 @@ export const POST = async (request) => {
       images
     };
 
-    console.log(propertyData);
-
     return new Response(JSON.stringify({ message: "Success!" }), {
       status: 200
     });
