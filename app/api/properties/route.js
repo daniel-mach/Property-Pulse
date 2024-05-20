@@ -62,15 +62,20 @@ export const POST = async (request) => {
         email: formData.get("seller_info.email"),
         phone: formData.get("seller_info.phone")
       },
-      owner: userId,
-      images
+      owner: userId
+      // images
     };
 
-    console.log(propertyData);
+    const newProperty = new Property(propertyData);
+    await newProperty.save();
 
-    return new Response(JSON.stringify({ message: "Success!" }), {
-      status: 200
-    });
+    return Response.redirect(
+      `${process.env.NEXTAUTH_URL}/properties/${newProperty._id}`
+    );
+
+    // return new Response(JSON.stringify({ message: "Success!" }), {
+    //   status: 200
+    // });
   } catch (error) {
     return new Response("Failed to add a property", { status: 500 });
   }
