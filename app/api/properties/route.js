@@ -1,5 +1,7 @@
 import connectDB from "@/config/database";
 import Property from "@/models/Property";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/utils/authOptions";
 
 export const GET = async (request) => {
   try {
@@ -18,6 +20,16 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
   try {
+    await connectDB();
+
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+      return new Response("Unauthorized", { status: 401 });
+    }
+
+    const userId = session.user.id;
+
     const formData = await request.formData();
 
     const amenities = formData.getAll("amenities");
@@ -49,8 +61,11 @@ export const POST = async (request) => {
         email: formData.get("seller_info.email"),
         phone: formData.get("seller_info.phone")
       },
+      owner: userId,
       images
     };
+
+    console.log(propertyData);
 
     return new Response(JSON.stringify({ message: "Success!" }), {
       status: 200
