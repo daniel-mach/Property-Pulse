@@ -62,13 +62,12 @@ export const POST = async (request) => {
         phone: formData.get("seller_info.phone")
       },
       owner: userId
-      // images
     };
 
-    const imageUploadPromises = [];
+    const imageUrls = [];
 
-    for (const image of images) {
-      const imageBuffer = await image.arrayBuffer();
+    for (const imageFile of images) {
+      const imageBuffer = await imageFile.arrayBuffer();
       const imageArray = Array.from(new Uint8Array(imageBuffer));
       const imageData = Buffer.from(imageArray);
 
@@ -76,14 +75,10 @@ export const POST = async (request) => {
 
       const result = await cloudinary.uploader.upload(
         `data:image/png;base64,${imageBase64}`,
-        { folder: "PropertyPulse" }
+        { folder: "propertypulse" }
       );
 
-      imageUploadPromises.push(result.secure_url);
-
-      const uploadedImages = await Promise.all(imageUploadPromises);
-
-      propertyData.images = uploadedImages;
+      imageUrls.push(result.secure_url);
     }
 
     const newProperty = new Property(propertyData);
@@ -92,10 +87,6 @@ export const POST = async (request) => {
     return Response.redirect(
       `${process.env.NEXTAUTH_URL}/properties/${newProperty._id}`
     );
-
-    // return new Response(JSON.stringify({ message: "Success!" }), {
-    //   status: 200
-    // });
   } catch (error) {
     return new Response("Failed to add a property", { status: 500 });
   }
