@@ -64,10 +64,10 @@ export const POST = async (request) => {
       owner: userId
     };
 
-    const imageUrls = [];
+    const imageUploadPromises = [];
 
-    for (const imageFile of images) {
-      const imageBuffer = await imageFile.arrayBuffer();
+    for (const image of images) {
+      const imageBuffer = await image.arrayBuffer();
       const imageArray = Array.from(new Uint8Array(imageBuffer));
       const imageData = Buffer.from(imageArray);
 
@@ -78,7 +78,10 @@ export const POST = async (request) => {
         { folder: "propertypulse" }
       );
 
-      imageUrls.push(result.secure_url);
+      imageUploadPromises.push(result.secure_url);
+
+      const uploadedImages = await Promise.all(imageUploadPromises);
+      propertyData.images = uploadedImages;
     }
 
     const newProperty = new Property(propertyData);
