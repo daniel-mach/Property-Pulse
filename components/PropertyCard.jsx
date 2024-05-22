@@ -27,13 +27,13 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="relative rounded-xl shadow-md">
       <Image
-        src={`/images/properties/${property.images[0]}`}
+        src={property.images[0]}
         alt=""
         sizes="100vw"
         width={0}
         height={0}
         className="h-auto w-full rounded-t-xl"
-        priority={true}
+        // priority={true}
       />
       <div className="p-4">
         <div className="mb-6 text-left md:text-center lg:text-left">
