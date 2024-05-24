@@ -1,15 +1,45 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import profileDefault from "@/assets/images/profile.png";
+import Spinner from "@/components/Spinner";
 
 const ProfilePage = () => {
   const { data: session } = useSession();
   const profileImage = session?.user?.image;
   const profileName = session?.user?.name;
   const profileEmail = session?.user?.email;
+
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUserProperties = async (userId) => {
+      if (!userId) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/properties/user/${userId}`);
+
+        if (response.status === 200) {
+          const data = await response.json();
+          setProperties(data);
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (session?.user?.id) {
+      fetchUserProperties(session.user.id);
+    }
+  }, [session]);
 
   return (
     <section className="bg-blue-50">
