@@ -23,7 +23,7 @@ export const GET = async (request, { params }) => {
 
 export const DELETE = async (request, { params }) => {
   try {
-    await connectDB();
+    const propertyId = params.id;
 
     const sessionUser = await getSessionUser();
 
@@ -33,7 +33,8 @@ export const DELETE = async (request, { params }) => {
 
     const { userId } = sessionUser;
 
-    const propertyId = params.id;
+    await connectDB();
+
     const property = await Property.findById(propertyId);
 
     if (!property) {
