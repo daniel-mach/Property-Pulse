@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import profileDefault from "@/assets/images/profile.png";
 import Spinner from "@/components/Spinner";
+import { toast } from "react-toastify";
 
 const ProfilePage = () => {
   const { data: session } = useSession();
@@ -62,13 +63,13 @@ const ProfilePage = () => {
 
         setProperties(updatedProperties);
 
-        alert("Property deleted");
+        toast.success("Property deleted");
       } else {
-        alert("Failed to delete the property");
+        toast.error("Failed to delete the property");
       }
     } catch (error) {
       console.log(error);
-      alert("Failed to delete the property");
+      toast.error("Failed to delete the property");
     }
   };
 
@@ -100,7 +101,7 @@ const ProfilePage = () => {
             <div className="md:w-3/4 md:pl-4">
               <h2 className="mb-4 text-xl font-semibold">Your Listings</h2>
               {!loading && properties.length === 0 && (
-                <p>You have no property listings.</p>
+                <p>You have no properties listed.</p>
               )}
               {loading ? (
                 <Spinner loading={loading} />
