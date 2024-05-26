@@ -103,7 +103,29 @@ const PropertyEditForm = () => {
     setFields((prevFields) => ({ ...prevFields, amenities: updatedAmenities }));
   };
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const formData = new FormData(event.target);
+
+      const response = await fetch(`/api/properties/${id}`, {
+        method: "PUT",
+        body: formData
+      });
+
+      if (response.status === 200) {
+        router.push(`/properties/${id}`);
+      } else if (response.status === 401 || response.status === 403) {
+        toast.error("Permission denied");
+      } else {
+        toast.error("Something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
 
   return (
     !loading && (
