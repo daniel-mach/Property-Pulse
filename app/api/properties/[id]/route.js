@@ -24,8 +24,9 @@ export const GET = async (request, { params }) => {
 
 export const DELETE = async (request, { params }) => {
   try {
-    const propertyId = params.id;
+    await connectDB();
 
+    const propertyId = params.id;
     const sessionUser = await getSessionUser();
 
     if (!sessionUser || !sessionUser.userId) {
@@ -33,9 +34,6 @@ export const DELETE = async (request, { params }) => {
     }
 
     const { userId } = sessionUser;
-
-    await connectDB();
-
     const property = await Property.findById(propertyId);
 
     if (!property) {
@@ -80,11 +78,8 @@ export const PUT = async (request, { params }) => {
 
     const { id } = params;
     const { userId } = sessionUser;
-
     const formData = await request.formData();
-
     const amenities = formData.getAll("amenities");
-
     const existingProperty = await Property.findById(id);
 
     if (!existingProperty) {
