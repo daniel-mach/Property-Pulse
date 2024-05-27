@@ -4,7 +4,7 @@ const InfoBoxes = () => {
   return (
     <section>
       <div className="container-xl m-auto lg:container">
-        <div className="grid grid-cols-1 gap-4 rounded-lg p-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 rounded-lg py-4 md:grid-cols-2">
           <InfoBox
             heading="For Renters"
             backgroundColor="bg-gray-100"
