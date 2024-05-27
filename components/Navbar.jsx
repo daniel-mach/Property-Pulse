@@ -65,7 +65,12 @@ const Navbar = () => {
           </div>
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             <Link className="flex flex-shrink-0 items-center" href="/">
-              <Image className="h-10 w-auto" src={logo} alt="Logo icon" />
+              <Image
+                className="h-10 w-auto"
+                src={logo}
+                alt="Logo icon"
+                priority="priority"
+              />
               <span className="ml-2 hidden text-2xl font-bold text-white md:block">
                 PropertyPulse
               </span>
