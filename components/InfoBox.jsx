@@ -20,4 +20,5 @@ const InfoBox = ({
     </div>
   );
 };
+
 export default InfoBox;

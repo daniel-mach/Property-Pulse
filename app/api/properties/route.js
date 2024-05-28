@@ -29,9 +29,7 @@ export const POST = async (request) => {
     }
 
     const { userId } = sessionUser;
-
     const formData = await request.formData();
-
     const amenities = formData.getAll("amenities");
     const images = formData
       .getAll("images")

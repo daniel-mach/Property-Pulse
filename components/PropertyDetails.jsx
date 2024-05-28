@@ -91,4 +91,5 @@ const PropertyDetails = ({ property }) => {
     </main>
   );
 };
+
 export default PropertyDetails;

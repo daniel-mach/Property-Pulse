@@ -8,7 +8,7 @@ import { fetchProperty } from "@/utils/requests";
 const PropertyEditForm = () => {
   const { id } = useParams();
   const router = useRouter();
-
+  const [loading, setLoading] = useState(true);
   const [fields, setFields] = useState({
     name: "",
     type: "",
@@ -34,7 +34,6 @@ const PropertyEditForm = () => {
       phone: ""
     }
   });
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPropertyData = async () => {
@@ -87,7 +86,6 @@ const PropertyEditForm = () => {
 
   const handleAmenitiesChange = (event) => {
     const { value, checked } = event.target;
-
     const updatedAmenities = [...fields.amenities];
 
     if (checked) {

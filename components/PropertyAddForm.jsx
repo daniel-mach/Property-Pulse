@@ -53,7 +53,6 @@ const PropertyAddForm = () => {
 
   const handleAmenitiesChange = (event) => {
     const { value, checked } = event.target;
-
     const updatedAmenities = [...fields.amenities];
 
     if (checked) {
@@ -71,7 +70,6 @@ const PropertyAddForm = () => {
 
   const handleImageChange = (event) => {
     const { files } = event.target;
-
     const updatedImages = [...fields.images];
 
     for (const file of files) {
@@ -538,4 +536,5 @@ const PropertyAddForm = () => {
     </form>
   );
 };
+
 export default PropertyAddForm;
