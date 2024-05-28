@@ -88,9 +88,6 @@ const PropertyDetails = ({ property }) => {
           ))}
         </ul>
       </div>
-      <div className="mt-6 rounded-lg bg-white p-6 shadow-md">
-        <div id="map"></div>
-      </div>
     </main>
   );
 };
