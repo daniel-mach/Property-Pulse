@@ -12,7 +12,7 @@ export const POST = async (request) => {
     const { propertyId } = await request.json();
     const sessionUser = await getSessionUser();
 
-    if (!session || !session.userId) {
+    if (!sessionUser || !sessionUser.userId) {
       return new Response("User ID is required", { status: 401 });
     }
 
