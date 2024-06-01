@@ -9,11 +9,24 @@ import {
   EmailIcon
 } from "react-share";
 
-const ShareButton = () => {
+const ShareButton = ({ property }) => {
+  const shareUrl = `${process.env.NEXT_PUBLIC_DOMAIN}/properties/${property._id}`;
+
   return (
-    <button className="flex w-full items-center justify-center rounded-full bg-orange-500 px-4 py-2 font-bold text-white hover:bg-orange-600">
-      <FaShare className="mr-2" /> Share Property
-    </button>
+    <>
+      <h3 className="text-cl pt-2 text-center font-bold">
+        Share This Property
+      </h3>
+      <div className="flex justify-center gap-3 pb-2">
+        <FacebookShareButton
+          url={shareUrl}
+          quote={property.name}
+          hashtag={`#${property.type}ForRent`}
+        >
+          <FacebookIcon size={40} round={true} />
+        </FacebookShareButton>
+      </div>
+    </>
   );
 };
 
