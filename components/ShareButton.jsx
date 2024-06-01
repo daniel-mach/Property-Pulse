@@ -1,4 +1,13 @@
-import { FaShare } from "react-icons/fa";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  EmailShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  EmailIcon
+} from "react-share";
 
 const ShareButton = () => {
   return (
