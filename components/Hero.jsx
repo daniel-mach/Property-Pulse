@@ -1,3 +1,5 @@
+import PropertySearchForm from "./PropertySearchForm";
+
 const Hero = () => {
   return (
     <section className="mb-4 bg-blue-700 py-20">
@@ -10,6 +12,7 @@ const Hero = () => {
             Discover the perfect property that suits your needs.
           </p>
         </div>
+        <PropertySearchForm />
       </div>
     </section>
   );
