@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const PropertyImages = ({ images }) => {
   return (
-    <section className="bg-blue-50 p-4">
+    <section className="bg-blue-50 p-4 pb-12">
       <div className="container mx-auto">
         {images.length === 1 ? (
           <Image

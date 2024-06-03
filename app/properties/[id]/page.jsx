@@ -54,7 +54,7 @@ const PropertyPage = () => {
       {!loading && property && (
         <>
           <PropertyHeaderImage image={property.images[0]} />
-          <section>
+          <section className="border-b bg-gray-50">
             <div className="container m-auto px-6 py-6">
               <Link
                 href="/properties"
