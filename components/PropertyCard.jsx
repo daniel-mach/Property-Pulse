@@ -82,7 +82,7 @@ const PropertyCard = ({ property }) => {
           <div className="mb-4 flex gap-2 align-middle lg:mb-0">
             <FaMapMarker className="mt-1 text-orange-700"></FaMapMarker>
             <span className="text-orange-700">
-              {property.location.city} {property.location.state}
+              {property.location.city}, {property.location.state}
             </span>
           </div>
           <Link
