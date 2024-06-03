@@ -13,7 +13,7 @@ const PropertyDetails = ({ property }) => {
       <div className="rounded-lg bg-white p-6 text-center shadow-md md:text-left">
         <div className="mb-4 text-gray-500">{property.type}</div>
         <h1 className="mb-4 text-3xl font-bold">{property.name}</h1>
-        <div className="mb-4 flex justify-center align-middle text-gray-500 md:justify-start">
+        <div className="mb-4 flex items-center justify-center align-middle text-gray-500 md:justify-start">
           <FaMapMarker className="mr-2 text-lg text-orange-700"></FaMapMarker>
           <p className="text-orange-700">
             {property.location.street}, {property.location.city},{" "}

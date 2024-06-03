@@ -9,7 +9,7 @@ import PropertyDetails from "@/components/PropertyDetails";
 import PropertyImages from "@/components/PropertyImages";
 import BookmarkButton from "@/components/BookmarkButton";
 import ShareButton from "@/components/ShareButton";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 import Spinner from "@/components/Spinner";
 import PropertyContactForm from "@/components/PropertyContactForm";
 
@@ -60,7 +60,8 @@ const PropertyPage = () => {
                 href="/properties"
                 className="flex items-center text-blue-500 hover:text-blue-600"
               >
-                <FaArrowLeft className="mr-2"></FaArrowLeft>Back to Properties
+                <FaArrowAltCircleLeft className="mr-2" />
+                <p>Back to Properties</p>
               </Link>
             </div>
           </section>
