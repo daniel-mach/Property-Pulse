@@ -22,14 +22,14 @@ const PropertyContactForm = ({ property }) => {
       property: property._id
     };
 
-    console.log(messageData);
+    setWasSubmitted(true);
   };
 
   return (
     <div className="rounded-lg bg-white p-6 shadow-md">
       <h3 className="mb-6 text-xl font-bold">Contact Property Manager</h3>
       {wasSubmitted ? (
-        <p className="mb-4 text-green-500">Message sent, whoosh!</p>
+        <p className="mb-4 text-green-500">Message submitted</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
