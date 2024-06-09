@@ -10,7 +10,7 @@ import {
 const PropertyDetails = ({ property }) => {
   return (
     <main>
-      <div className="rounded-lg bg-white p-6 text-center shadow-md md:text-left">
+      <div className="rounded-lg border bg-white p-6 text-center shadow-md md:text-left">
         <div className="mb-4 text-gray-500">{property.type}</div>
         <h1 className="mb-4 text-3xl font-bold">{property.name}</h1>
         <div className="mb-4 flex items-center justify-center align-middle text-gray-500 md:justify-start">
@@ -20,7 +20,7 @@ const PropertyDetails = ({ property }) => {
             {property.location.state}
           </p>
         </div>
-        <h3 className="my-6 bg-gray-800 p-2 text-lg font-bold text-white">
+        <h3 className="my-6 rounded-md bg-gray-600 p-2 text-lg font-bold text-white">
           Rates & Options
         </h3>
         <div className="flex flex-col justify-around md:flex-row">
@@ -56,7 +56,7 @@ const PropertyDetails = ({ property }) => {
           </div>
         </div>
       </div>
-      <div className="mt-6 rounded-lg bg-white p-6 shadow-md">
+      <div className="mt-6 rounded-lg border bg-white p-6 shadow-md">
         <h3 className="mb-6 text-lg font-bold">Description & Details</h3>
         <div className="mb-4 flex justify-center gap-4 space-x-9 text-xl text-blue-600">
           <p className="flex items-center">
@@ -77,7 +77,7 @@ const PropertyDetails = ({ property }) => {
         </div>
         <p className="mb-4 text-center text-gray-500">{property.description}</p>
       </div>
-      <div className="mt-6 rounded-lg bg-white p-6 shadow-md">
+      <div className="mt-6 rounded-lg border bg-white p-6 shadow-md">
         <h3 className="mb-6 text-lg font-bold">Amenities</h3>
         <ul className="grid list-none grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {property.amenities.map((amenity, index) => (

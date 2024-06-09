@@ -15,9 +15,9 @@ const SavedPropertiesPage = async () => {
     .lean();
 
   return (
-    <section className="py-6">
+    <section className="container-xl m-auto px-4 py-6 lg:container">
       <h1 className="mb-4 text-2xl">Saved Properties</h1>
-      <div className="container-xl m-auto px-4 py-6 lg:container">
+      <div className="py-6">
         {bookmarks.length === 0 ? (
           <p>No properties found</p>
         ) : (

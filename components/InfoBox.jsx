@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const InfoBox = ({
   heading,
-  backgroundColor = "bg-gray-100",
+  backgroundColor,
   textColor = "text-gray-800",
   buttonInfo,
   children
@@ -13,7 +13,7 @@ const InfoBox = ({
       <p className={`${textColor} mb-4 mt-2`}>{children}</p>
       <Link
         href={buttonInfo.link}
-        className={`${buttonInfo.backgroundColor} inline-block rounded-lg bg-black px-4 py-2 text-white hover:bg-gray-700 hover:opacity-80`}
+        className={`${buttonInfo.backgroundColor} inline-block rounded-lg px-4 py-2 text-white hover:opacity-80`}
       >
         {buttonInfo.text}
       </Link>

@@ -74,7 +74,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <section className="bg-blue-50">
+    <>
       <div className="container m-auto py-24">
         <div className="m-4 mb-4 rounded-md border bg-white px-6 py-8 shadow-md md:m-0">
           <h1 className="mb-4 text-3xl font-bold">Your Profile</h1>
@@ -128,7 +128,7 @@ const ProfilePage = () => {
                     <div className="mt-2">
                       <Link
                         href={`/properties/${property._id}/edit`}
-                        className="mr-2 rounded-md bg-blue-500 px-3 py-3 text-white hover:bg-blue-600"
+                        className="mr-2 rounded-md bg-blue-500 px-3 py-2 text-white hover:bg-blue-600"
                       >
                         Edit
                       </Link>
@@ -147,7 +147,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
