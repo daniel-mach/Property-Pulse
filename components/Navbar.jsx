@@ -31,7 +31,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="border-b border-green-500 bg-green-700">
+    <nav className="border-b border-green-600 bg-green-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -78,16 +78,16 @@ const Navbar = () => {
                 <Link
                   href="/"
                   className={`${
-                    pathname === "/" ? "bg-black" : ""
-                  } rounded-md px-3 py-2 text-white hover:bg-gray-900 hover:text-white`}
+                    pathname === "/" ? "border border-white" : ""
+                  } rounded-md border border-transparent px-3 py-2 text-white hover:border hover:border-green-600 hover:text-white`}
                 >
                   Home
                 </Link>
                 <Link
                   href="/properties"
                   className={`${
-                    pathname === "/properties" ? "bg-black" : ""
-                  } rounded-md px-3 py-2 text-white hover:bg-gray-900 hover:text-white`}
+                    pathname === "/properties" ? "border border-white" : ""
+                  } rounded-md border border-transparent px-3 py-2 text-white hover:border hover:border-green-600 hover:text-white`}
                 >
                   Properties
                 </Link>
@@ -95,8 +95,10 @@ const Navbar = () => {
                   <Link
                     href="/properties/add"
                     className={`${
-                      pathname === "/properties/add" ? "bg-black" : ""
-                    } rounded-md px-3 py-2 text-white hover:bg-gray-900 hover:text-white`}
+                      pathname === "/properties/add"
+                        ? "border border-white"
+                        : ""
+                    } rounded-md border border-transparent px-3 py-2 text-white hover:border hover:border-green-600 hover:text-white`}
                   >
                     Add Property
                   </Link>
