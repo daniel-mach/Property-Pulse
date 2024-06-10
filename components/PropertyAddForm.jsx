@@ -135,7 +135,7 @@ const PropertyAddForm = () => {
           onChange={handleChange}
         ></textarea>
       </div>
-      <div className="mb-4 bg-blue-50 p-4">
+      <div className="mb-4 bg-green-50 p-4">
         <label className="mb-2 block font-bold text-gray-700">Location</label>
         <input
           type="text"
@@ -412,7 +412,7 @@ const PropertyAddForm = () => {
           </div>
         </div>
       </div>
-      <div className="mb-4 bg-blue-50 p-4">
+      <div className="mb-4 bg-green-50 p-4">
         <label className="mb-2 block font-bold text-gray-700">
           Rates (Leave blank if not applicable)
         </label>
@@ -527,7 +527,7 @@ const PropertyAddForm = () => {
       </div>
       <div>
         <button
-          className="focus:shadow-outline w-full rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600 focus:outline-none"
+          className="focus:shadow-outline w-full rounded-full bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-600 focus:outline-none"
           type="submit"
         >
           Add Property

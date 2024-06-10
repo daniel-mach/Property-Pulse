@@ -40,7 +40,7 @@ const PropertyCard = ({ property }) => {
           <div className="text-gray-600">{property.type}</div>
           <h3 className="text-xl font-bold">{property.name}</h3>
         </div>
-        <h3 className="absolute right-[10px] top-[10px] rounded-lg bg-white px-4 py-2 text-right font-bold text-blue-600 md:text-center lg:text-right">
+        <h3 className="absolute right-[10px] top-[10px] rounded-lg bg-white px-4 py-2 text-right font-bold text-green-600 md:text-center lg:text-right">
           ${getRateDisplay()}
         </h3>
         <div className="mb-4 flex justify-center gap-4 text-gray-500">
@@ -87,7 +87,7 @@ const PropertyCard = ({ property }) => {
           </div>
           <Link
             href={`/properties/${property._id}`}
-            className="h-[36px] rounded-lg bg-blue-600 px-4 py-2 text-center text-sm text-white hover:bg-blue-700"
+            className="h-[36px] rounded-lg bg-green-600 px-4 py-2 text-center text-sm text-white hover:bg-green-700"
           >
             Details
           </Link>

@@ -13,13 +13,13 @@ const Message = ({ message }) => {
         </li>
         <li>
           <strong>Reply Email: </strong>
-          <a href={`mailto:${message.email}`} className="text-blue-500">
+          <a href={`mailto:${message.email}`} className="text-green-500">
             {message.email}
           </a>
         </li>
         <li>
           <strong>Reply Phone: </strong>
-          <a href={`tel:${message.phone}`} className="text-blue-500">
+          <a href={`tel:${message.phone}`} className="text-green-500">
             {message.phone}
           </a>
         </li>
@@ -28,7 +28,7 @@ const Message = ({ message }) => {
           {message.createdAt.toLocaleString()}
         </li>
       </ul>
-      <button className="mr-3 mt-4 rounded-md bg-blue-500 px-3 py-1 text-white">
+      <button className="mr-3 mt-4 rounded-md bg-green-500 px-3 py-1 text-white">
         Mark As Read
       </button>
       <button className="mt-4 rounded-md bg-red-500 px-3 py-1 text-white">

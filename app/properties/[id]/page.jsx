@@ -58,7 +58,7 @@ const PropertyPage = () => {
             <div className="container m-auto px-6 py-6">
               <Link
                 href="/properties"
-                className="flex items-center text-blue-500 hover:text-blue-600"
+                className="flex items-center text-green-500 hover:text-green-600"
               >
                 <FaArrowAltCircleLeft className="mr-2" />
                 <p>Back to Properties</p>

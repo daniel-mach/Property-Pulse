@@ -8,7 +8,7 @@ const PropertiesPage = async () => {
 
   return (
     <>
-      <section className="bg-blue-700">
+      <section className="bg-green-700">
         <div className="mx-auto flex max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8">
           <PropertySearchForm />
         </div>
