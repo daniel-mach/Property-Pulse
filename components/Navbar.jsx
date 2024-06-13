@@ -8,6 +8,7 @@ import logo from "@/assets/images/logo-white.png";
 import profileDefault from "@/assets/images/profile.png";
 import { FaGoogle } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import UnreadMessagesCount from "./UnreadMessagesCount";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -19,8 +20,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const setAuthProviders = async () => {
-      const res = await getProviders();
-      setProviders(res);
+      const response = await getProviders();
+      setProviders(response);
     };
 
     setAuthProviders();
@@ -147,9 +148,7 @@ const Navbar = () => {
                     />
                   </svg>
                 </button>
-                <span className="absolute right-0 top-0 inline-flex -translate-y-1/2 translate-x-1/2 transform items-center justify-center rounded-full bg-red-600 px-2 py-1 text-xs font-bold leading-none text-white">
-                  2
-                </span>
+                <UnreadMessagesCount session={session} />
               </Link>
               <div className="relative ml-3">
                 <div>
