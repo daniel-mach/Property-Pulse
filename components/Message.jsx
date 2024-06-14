@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useGlobalContext } from "@/context/GlobalContext";
 import { toast } from "react-toastify";
@@ -72,15 +73,15 @@ const Message = ({ message }) => {
         </li>
         <li>
           <strong>Reply Email: </strong>
-          <a href={`mailto:${message.email}`} className="text-green-500">
+          <Link href={`mailto:${message.email}`} className="text-green-500">
             {message.email}
-          </a>
+          </Link>
         </li>
         <li>
           <strong>Reply Phone: </strong>
-          <a href={`tel:${message.phone}`} className="text-green-500">
+          <Link href={`tel:${message.phone}`} className="text-green-500">
             {message.phone}
-          </a>
+          </Link>
         </li>
         <li>
           <strong>Received: </strong>
