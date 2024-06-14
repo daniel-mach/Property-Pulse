@@ -42,6 +42,7 @@ const Message = ({ message }) => {
 
       if (response.status === 200) {
         setIsDeleted(true);
+        setUnreadCount((prevCount) => prevCount - 1);
         toast.success("Message deleted");
       }
     } catch (error) {
