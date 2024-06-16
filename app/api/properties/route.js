@@ -7,9 +7,16 @@ export const GET = async (request) => {
   try {
     await connectDB();
 
-    const properties = await Property.find({});
+    const page = request.nextUrl.searchParams.get("page") || 1;
+    const pageSize = request.nextUrl.searchParams.get("pageSize") || 3;
+    const pageSkip = (page - 1) * pageSize;
 
-    return new Response(JSON.stringify(properties), {
+    const totalProperties = await Property.countDocuments({});
+    const properties = await Property.find({}).skip(pageSkip).limit(pageSize);
+
+    const result = { totalProperties, properties };
+
+    return new Response(JSON.stringify(result), {
       status: 200
     });
   } catch (error) {

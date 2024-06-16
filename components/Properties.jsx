@@ -18,7 +18,7 @@ const Properties = () => {
         }
 
         const data = await response.json();
-        setProperties(data);
+        setProperties(data.properties);
       } catch (error) {
         console.log(error);
       } finally {
