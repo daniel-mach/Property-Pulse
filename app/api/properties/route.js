@@ -14,7 +14,7 @@ export const GET = async (request) => {
     const totalProperties = await Property.countDocuments({});
     const properties = await Property.find({}).skip(pageSkip).limit(pageSize);
 
-    const result = { totalProperties, properties };
+    const result = { total: totalProperties, properties };
 
     return new Response(JSON.stringify(result), {
       status: 200
