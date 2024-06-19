@@ -1,4 +1,8 @@
-const FeaturedProperties = () => {
+import { fetchProperties } from "@/utils/requests";
+
+const FeaturedProperties = async () => {
+  const properties = await fetchProperties({ showFeatured: true });
+
   return (
     <section className="bg-green-50 px-4 pb-10 pt-6">
       <div className="container-xl m-auto lg:container">
@@ -32,7 +36,6 @@ const FeaturedProperties = () => {
                   2,800 <span className="md:hidden lg:inline">sqft</span>
                 </p>
               </div>
-
               <div className="mb-4 flex justify-center gap-4 text-sm text-green-900">
                 <p>
                   <i className="fa-solid fa-money-bill"></i> Nightly
@@ -41,9 +44,7 @@ const FeaturedProperties = () => {
                   <i className="fa-solid fa-money-bill"></i> Weekly
                 </p>
               </div>
-
               <div className="mb-5 border border-gray-200"></div>
-
               <div className="flex flex-col justify-between lg:flex-row">
                 <div className="mb-4 flex gap-2 align-middle lg:mb-0">
                   <i className="fa-solid fa-location-dot text-lg text-orange-700"></i>
@@ -84,7 +85,6 @@ const FeaturedProperties = () => {
                   900 <span className="md:hidden lg:inline">sqft</span>
                 </p>
               </div>
-
               <div className="mb-4 flex justify-center gap-4 text-sm text-green-900">
                 <p>
                   <i className="fa-solid fa-money-bill"></i> Nightly
@@ -93,9 +93,7 @@ const FeaturedProperties = () => {
                   <i className="fa-solid fa-money-bill"></i> Weekly
                 </p>
               </div>
-
               <div className="mb-5 border border-gray-200"></div>
-
               <div className="flex flex-col justify-between lg:flex-row">
                 <div className="mb-4 flex gap-2 align-middle lg:mb-0">
                   <i className="fa-solid fa-location-dot text-lg text-orange-700"></i>
