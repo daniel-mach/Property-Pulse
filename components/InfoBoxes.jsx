@@ -2,7 +2,7 @@ import InfoBox from "./InfoBox";
 
 const InfoBoxes = () => {
   return (
-    <section>
+    <section className="mb-4">
       <div className="container-xl m-auto lg:container">
         <div className="grid grid-cols-1 gap-4 rounded-lg py-4 md:grid-cols-2">
           <InfoBox
