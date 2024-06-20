@@ -10,7 +10,7 @@ import { FaGoogle } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import UnreadMessagesCount from "./MessagesUnreadCount";
 
-const Navbar = () => {
+const Header = () => {
   const { data: session } = useSession();
   const profileImage = session?.user.image;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -271,4 +271,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
