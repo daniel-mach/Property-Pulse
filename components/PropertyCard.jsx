@@ -78,9 +78,9 @@ const PropertyCard = ({ property }) => {
           )}
         </div>
         <div className="mb-5 border border-gray-100"></div>
-        <div className="mb-4 flex flex-col items-center justify-between lg:flex-row">
-          <div className="mb-4 flex gap-2 align-middle lg:mb-0">
-            <FaMapMarker className="mt-1 text-orange-700"></FaMapMarker>
+        <div className="flex flex-col items-center justify-between lg:flex-row">
+          <div className="mb-4 flex items-center gap-2 lg:mb-0">
+            <FaMapMarker className="text-orange-700"></FaMapMarker>
             <span className="text-orange-700">
               {property.location.city}, {property.location.state}
             </span>
