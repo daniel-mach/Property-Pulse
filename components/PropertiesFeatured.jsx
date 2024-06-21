@@ -3,6 +3,9 @@ import PropertyCardFeatured from "./PropertyCardFeatured";
 
 const FeaturedProperties = async () => {
   const properties = await fetchProperties({ showFeatured: true });
+  const randomProperties = properties
+    .sort(() => Math.random() - Math.random())
+    .slice(0, 2);
 
   return (
     properties.length > 0 && (
@@ -12,7 +15,7 @@ const FeaturedProperties = async () => {
             Featured Properties
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {properties.map((property) => (
+            {randomProperties.map((property) => (
               <PropertyCardFeatured key={property._id} property={property} />
             ))}
           </div>
