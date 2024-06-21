@@ -17,4 +17,5 @@ const LoadingPage = () => {
     ></ClipLoader>
   );
 };
+
 export default LoadingPage;

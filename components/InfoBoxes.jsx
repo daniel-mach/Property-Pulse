@@ -34,4 +34,5 @@ const InfoBoxes = () => {
     </section>
   );
 };
+
 export default InfoBoxes;

@@ -17,4 +17,5 @@ const Spinner = () => {
     ></ClipLoader>
   );
 };
+
 export default Spinner;
