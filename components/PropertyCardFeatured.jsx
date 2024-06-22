@@ -25,17 +25,17 @@ const PropertyCardFeatured = ({ property }) => {
   };
 
   return (
-    <div className="relative flex flex-col rounded-xl border border-green-600 bg-white shadow-md md:flex-row">
+    <div className="relative flex flex-row rounded-xl border border-green-600 bg-white shadow-md">
       <Image
         src={property.images[0]}
         alt=""
         sizes="100vw"
         width={0}
         height={0}
-        className="w-full rounded-t-xl object-cover md:rounded-l-xl md:rounded-tr-none"
+        className="w-1/2 rounded-t-xl object-cover md:rounded-l-xl md:rounded-tr-none"
         priority={true}
       />
-      <div className="w-full p-6">
+      <div className="w-1/2 p-6">
         <div className="mb-6 text-left md:text-center lg:text-left">
           <div className="text-gray-600">{property.type}</div>
           <h3 className="text-xl font-bold">{property.name}</h3>
