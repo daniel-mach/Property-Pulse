@@ -25,7 +25,7 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
-    <div className="relative rounded-xl shadow-md">
+    <div className="relative rounded-xl border border-green-200 shadow-md">
       <Image
         src={property.images[0]}
         alt=""
@@ -40,9 +40,9 @@ const PropertyCard = ({ property }) => {
           <div className="text-gray-600">{property.type}</div>
           <h3 className="text-xl font-bold">{property.name}</h3>
         </div>
-        <h3 className="absolute right-[10px] top-[10px] rounded-lg bg-white px-4 py-2 text-right font-bold text-green-600 md:text-center lg:text-right">
+        <h4 className="absolute right-[10px] top-[10px] rounded-lg border border-green-500 bg-white px-4 py-2 text-right font-bold text-green-600 md:text-center lg:text-right">
           ${getRateDisplay()}
-        </h3>
+        </h4>
         <div className="mb-4 flex justify-center gap-4 text-gray-500">
           <p>
             <FaBed className="mr-2 inline"></FaBed>

@@ -25,22 +25,24 @@ const PropertyCardFeatured = ({ property }) => {
   };
 
   return (
-    <div className="relative flex flex-col rounded-xl bg-white shadow-md md:flex-row">
+    <div className="relative flex flex-col rounded-xl border border-green-600 bg-white shadow-md md:flex-row">
       <Image
         src={property.images[0]}
         alt=""
         sizes="100vw"
         width={0}
         height={0}
-        className="w-full rounded-t-xl object-cover md:w-2/5 md:rounded-l-xl md:rounded-tr-none"
+        className="w-full rounded-t-xl object-cover md:rounded-l-xl md:rounded-tr-none"
         priority={true}
       />
-      <div className="p-6">
-        <h3 className="text-xl font-bold">{property.name}</h3>
-        <div className="mb-4 text-gray-600">{property.type}</div>
-        <h3 className="absolute left-[10px] top-[10px] rounded-lg bg-white px-4 py-2 text-right font-bold text-green-500 md:text-center lg:text-right">
+      <div className="w-full p-6">
+        <div className="mb-6 text-left md:text-center lg:text-left">
+          <div className="text-gray-600">{property.type}</div>
+          <h3 className="text-xl font-bold">{property.name}</h3>
+        </div>
+        <h4 className="absolute left-[10px] top-[10px] rounded-lg border border-green-500 bg-white px-4 py-2 text-right font-bold text-green-500 md:text-center lg:text-right">
           ${getRateDisplay()}
-        </h3>
+        </h4>
         <div className="mb-4 flex justify-center gap-4 text-gray-500">
           <p>
             <FaBed className="mr-2 inline"></FaBed>
