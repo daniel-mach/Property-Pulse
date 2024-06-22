@@ -72,7 +72,7 @@ const PropertyCardFeatured = ({ property }) => {
         <div className="flex flex-col items-center justify-between lg:flex-row">
           <div className="mb-4 flex items-center gap-2 lg:mb-0">
             <FaMapMarker className="text-lg text-orange-700"></FaMapMarker>
-            <span className="text-orange-700">
+            <span className="line-clamp-1 text-orange-700">
               {property.location.city}, {property.location.state}
             </span>
           </div>
