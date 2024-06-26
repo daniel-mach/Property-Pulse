@@ -1,29 +1,29 @@
-import PropertyCard from "./PropertyCard";
 import Link from "next/link";
-import { fetchProperties } from "@/utils/requests";
+import PropertyCard from "@/components/PropertyCard";
+import connectDB from "@/config/database";
+import Property from "@/models/Property";
 
 const HomeProperties = async () => {
-  const data = await fetchProperties();
-  const recentProperties = data.properties
-    .sort(() => Math.random() - Math.random())
-    .slice(0, 3);
+  await connectDB();
+
+  const recentProperties = await Property.find({})
+    .sort({ createdAt: -1 })
+    .limit(3)
+    .lean();
 
   return (
     <>
       <section className="px-4 py-6">
         <div className="container-xl m-auto lg:container">
-          <h2 className="mb-6 text-center text-3xl font-bold text-green-600">
+          <h2 className="mb-6 text-center text-3xl font-bold text-green-500">
             Recent Properties
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {recentProperties === 0 ? (
+            {recentProperties.length === 0 ? (
               <p>No Properties Found</p>
             ) : (
               recentProperties.map((property) => (
-                <PropertyCard
-                  key={property._id}
-                  property={property}
-                ></PropertyCard>
+                <PropertyCard key={property._id} property={property} />
               ))
             )}
           </div>
