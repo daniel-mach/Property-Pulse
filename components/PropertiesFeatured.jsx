@@ -14,7 +14,7 @@ const FeaturedProperties = async () => {
     .slice(0, 2);
 
   return properties.length > 0 ? (
-    <section className="bg-blue-50 px-4 pb-10 pt-6">
+    <section className="bg-green-50 px-4 pb-10 pt-6">
       <div className="container-xl m-auto lg:container">
         <h2 className="mb-6 text-center text-3xl font-bold text-green-600">
           Featured Properties
