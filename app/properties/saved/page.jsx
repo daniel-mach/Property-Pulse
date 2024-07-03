@@ -1,13 +1,12 @@
 import PropertyCard from "@/components/PropertyCard";
-import User from "@/models/User";
 import connectDB from "@/config/database";
+import User from "@/models/User";
 import { getSessionUser } from "@/utils/getSessionUser";
 
 const SavedPropertiesPage = async () => {
   await connectDB();
 
   const sessionUser = await getSessionUser();
-
   const { userId } = sessionUser;
 
   const { bookmarks } = await User.findById(userId)
