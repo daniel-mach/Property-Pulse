@@ -29,8 +29,10 @@ const MessagesPage = async () => {
 
   const messages = [...unreadMessages, ...readMessages].map((messageDoc) => {
     const message = convertToSerializeableObject(messageDoc);
+
     message.sender = convertToSerializeableObject(messageDoc.sender);
     message.property = convertToSerializeableObject(messageDoc.property);
+
     return message;
   });
 
